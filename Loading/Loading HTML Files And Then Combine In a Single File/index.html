@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mother Document</title>
+</head>
+<body>
+    <header id="header-container"></header>
+    <main id="main-content-container"></main>
+    <footer id="footer-container"></footer>
+
+    <script>
+        // Function to load part of the document
+        function loadHTMLPart(url, containerId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(containerId).innerHTML = data;
+                })
+                .catch(error => {
+                    console.error("Error loading HTML part:", error);
+                });
+        }
+
+        // Load different parts of the page
+        loadHTMLPart('header.html', 'header-container');
+        loadHTMLPart('main-content.html', 'main-content-container');
+        loadHTMLPart('footer.html', 'footer-container');
+    </script>
+</body>
+</html>

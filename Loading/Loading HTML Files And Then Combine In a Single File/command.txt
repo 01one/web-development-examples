@@ -1,0 +1,8 @@
+You can run the server directly in a single command or you can run the test.py script
+
+
+in windows
+python -m http.server 8000
+
+in linux
+python3 -m http.server 8000
